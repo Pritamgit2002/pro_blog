@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { db } from "@/db/firebase-config";
 import { getDocs, collection } from "firebase/firestore";
 import Link from "next/link";
+import TechNews from "@/components/tech-news/page";
 
 const DaysOne = localFont({
   src: "../../../../public/fonts/DaysOne-Regular.ttf",
@@ -50,20 +51,27 @@ const Homepage = () => {
           <div className="text-[23px]">
             I share my latest designs and dev skills here
           </div>
-          <div className="flex justify-between gap-4">
+          <Link href="/" className="flex justify-between gap-8">
             {blogs.map((data) => (
               <div
-                className="p-5 bg-teal-900 rounded-lg"
+                className=" rounded-lg h-[400px] w-[900px]"
                 key={data.id}
               >
-                <video src={data.video} autoPlay muted loop className="rounded-lg"></video>
+                <video
+                  src={data.video}
+                  muted
+                  autoPlay
+                  loop
+                  className="rounded-lg object-cover"
+                ></video>
                 <h1 className="text-3xl font-semibold py-2">{data.title}</h1>
-                <p>{data.slug}</p>
+                <p className="text-[#eeeeee81]">{data.slug}</p>
                 <p>{data.desc}</p>
               </div>
             ))}
-          </div>
+          </Link>
         </div>
+        <TechNews />
       </div>
     </div>
   );

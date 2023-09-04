@@ -9,6 +9,11 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
+  images: {
+    domains: [
+      "firebasestorage.googleapis.com",
+    ],
+  },
   webpack: (config) => {
     config.plugins = config.plugins || [];
 
