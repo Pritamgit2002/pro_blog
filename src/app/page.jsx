@@ -31,8 +31,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      
+    <main>
+
       {/* <div className="">
         {blogs.map((data) => (
           <div className="grid grid-rows-2 p-5 m-5 bg-teal-900" key={data.id}>
