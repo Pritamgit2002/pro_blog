@@ -19,7 +19,7 @@ const Header = () => {
       <div className="flex gap-12 text-[23px]">
         {navLinks.map((links) => {
           return (
-            <Link key={links.id} href={links.url}>
+            <Link key={links.id} href={links.url} className="hover:text-[#eeeeeebb]">
               {links.title}
             </Link>
           );
