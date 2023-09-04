@@ -1,11 +1,30 @@
 import Link from "next/link";
-import React from "react";
+
+const navLinks = [
+  {
+    id: 1,
+    title: "Home",
+    url: "/",
+  },
+  {
+    id: 2,
+    title: "All Blogs",
+    url: "/pages/blogs",
+  },
+];
 
 const Header = () => {
   return (
     <div className="w-full  py-6 border-b-2 border-[#414750]">
-      <Link>Home</Link>
-      <Link>All Blogs</Link>
+      <div className="flex gap-12 text-[23px]">
+        {navLinks.map((links) => {
+          return (
+            <Link key={links.id} href={links.url}>
+              {links.title}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 };

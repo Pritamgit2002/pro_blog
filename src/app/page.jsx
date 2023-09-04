@@ -3,7 +3,7 @@
 import {db} from "../db/firebase-config"
 import { getDocs, collection } from "firebase/firestore";
 import { useEffect, useState } from "react";
-
+import HomePage from "@/app/pages/homepage/page";
 
 export default function Home() {
 
@@ -42,6 +42,7 @@ export default function Home() {
           </div>
         ))}
       </div> */}
+      <HomePage />
     </main>
   )
 }
